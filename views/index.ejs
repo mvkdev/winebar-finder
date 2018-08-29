@@ -1,12 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Winebar Finder Project</title>
-	<link rel="stylesheet" type="text/css" href="stylesheets/app.css">
-</head>
-<body>
-<main>
-	<h1>Inital Setup Successful!</h1>
-</main>
-</body>
-</html>
+<% include partials/header %>
+<% include partials/svg %>
+<header>
+	<div class="index-header__background">
+	</div>
+	<div class="index-header__logo-box">
+		<img src="../img/logo.png" class="index-header__logo-image">
+	</div>
+	<div class="index-header__text-box">
+		<div class="index-header__text">"Where there is no <span class="index-header__text-mark">Wine</span> there is no <span class="index-header__text-mark">love</span>"
+	</div>
+	<div class="index-header__search">
+		<form action="" method="GET" class="index-header__search-form">
+			<input type="text" name="search" class="index-header__search-input" placeholder="Find your Winebar..." required>
+			<button class="index-header__search-button">Go</button>
+		</form>
+	</div>
+</header>
+<% include partials/footer %>

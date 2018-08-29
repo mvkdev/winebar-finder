@@ -1,0 +1,27 @@
+.row {
+	@include clearfix;
+	max-width: $grid_width;
+	margin: 0 auto;
+
+
+	&:not(:last-child) {
+		margin-bottom: $gutter_vertical;
+	}
+	
+	[class^="col-"] {
+		float:left;
+
+		&:not(:last-child){
+			margin-right: $gutter_horizontal;
+		}
+	}
+
+	@each $name,$value in $grid {
+	@for $i from 1 to $value {
+		.col-#{$i}-of-#{$value} {
+			@include calcGrid($i,$value);
+		}
+	 }	
+   }
+
+}
