@@ -17,6 +17,116 @@ body {
   position: absolute;
   left: -9999rem; }
 
+.navigation__checkbox {
+  display: none;
+  visibility: hidden; }
+
+.navigation__button {
+  position: fixed;
+  top: 3rem;
+  right: 6rem;
+  height: 6rem;
+  width: 6rem;
+  background-color: transparent;
+  border: 1px solid #D7D7D7;
+  border-radius: 50%;
+  text-align: center;
+  z-index: 1500; }
+
+.navigation__icon {
+  margin-top: 2.8rem;
+  position: relative; }
+  .navigation__icon::before, .navigation__icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    background-color: #D7D7D7; }
+  .navigation__icon, .navigation__icon::before, .navigation__icon::after {
+    width: 2.5rem;
+    height: 2px;
+    background-color: #D7D7D7;
+    display: inline-block;
+    transition: all .3s; }
+  .navigation__icon::before {
+    top: -.8rem; }
+  .navigation__icon::after {
+    top: .8rem; }
+
+.navigation__button:hover .navigation__icon::before {
+  top: -1.15rem; }
+
+.navigation__button:hover .navigation__icon::after {
+  top: 1.15rem; }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+  transform: rotate(135deg);
+  top: 0; }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+  transform: rotate(-135deg);
+  top: 0; }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon {
+  background-color: transparent; }
+
+.navigation__background {
+  width: 100vw;
+  height: 100vh;
+  background-color: #011A27;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all .5s;
+  transform: translateX(100%);
+  z-index: 1000; }
+
+.navigation__checkbox:checked ~ .navigation__background {
+  transform: translateX(66%); }
+
+.navigation__checkbox:checked ~ .navigation__nav {
+  transform: translateX(66%); }
+
+.navigation__checkbox:checked ~ .navigation__nav .navigation__list {
+  opacity: 1; }
+
+.navigation__nav {
+  transition: all .5s;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  transform: translateX(100%);
+  z-index: 1200; }
+
+.navigation__list {
+  transition: all 1s;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  margin-left: 13rem;
+  opacity: 0; }
+  .navigation__list:hover li:not(:hover) {
+    transition: all .4s;
+    transform: scale(0.95);
+    opacity: .5; }
+  .navigation__list:hover li:hover {
+    transition: all .4s;
+    transform: translateY(-0.5rem) scale(1.05); }
+
+.navigation__link {
+  transition: all .4s; }
+  .navigation__link:link, .navigation__link:visited {
+    font-size: 4rem;
+    font-family: "Amatic SC";
+    text-decoration: none;
+    color: #FAFAFA; }
+
+.index-page {
+  overflow: hidden; }
+
 .index-header__background {
   height: 100vh;
   background-image: url("../img/bg-image.jpg");
@@ -29,7 +139,7 @@ body {
   left: 1.2rem; }
 
 .index-header__logo-image {
-  transform: scale(0.7); }
+  transform: scale(0.5); }
 
 .index-header__text-box {
   position: absolute;
@@ -44,6 +154,9 @@ body {
 .index-header__text-mark {
   text-transform: uppercase;
   color: #F0810F; }
+
+.index-header__text-author {
+  font-size: 4rem; }
 
 .index-header__search-form {
   margin-top: 1.5rem;

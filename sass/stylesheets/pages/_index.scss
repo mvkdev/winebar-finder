@@ -1,3 +1,8 @@
+.index-page {
+	overflow: hidden;
+}
+
+
 .index-header{
 
 	&__background {
@@ -14,7 +19,7 @@
 	}
 
 	&__logo-image{
-		transform: scale(0.7);
+		transform: scale(0.5);
 	}
 
 	&__text-box{
@@ -28,6 +33,10 @@
 	&__text-mark{
 		text-transform: uppercase;
 		color: $color-primary-3;
+	}
+
+	&__text-author {
+		font-size: 4rem;
 	}
 
 	&__search-form {
