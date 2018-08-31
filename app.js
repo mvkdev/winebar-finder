@@ -9,6 +9,7 @@ const express 			= require('express'),
 // Import Routes
 
 const indexRoutes 		= require('./routes/index');
+const directoryRoutes	= require('./routes/directory');
 
 
 // Initialize Mongoose and connect Mongo DB
@@ -45,6 +46,7 @@ app.use(methodOverride('_method'));
 //Load Index Route
 
 app.use(indexRoutes);
+app.use(directoryRoutes);
 
 //Start Server
 

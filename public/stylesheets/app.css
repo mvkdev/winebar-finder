@@ -185,3 +185,6 @@ body {
   border: none; }
   .index-header__search-button:hover {
     color: #E6DF44; }
+
+.directory-page {
+  background-image: linear-gradient(to bottom right, #011A27, #063852); }
