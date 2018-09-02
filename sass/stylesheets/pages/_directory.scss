@@ -1,3 +1,6 @@
 .directory-page {
-	background-image: linear-gradient(to bottom right,$color-primary-1,$color-primary-2);
+	height: 100vh;
+	background-image: linear-gradient(to right bottom,rgba($color-primary-1,1.0),rgba($color-primary-2,1.0));
+	background-repeat: no-repeat;
+	background-size: cover;
 }

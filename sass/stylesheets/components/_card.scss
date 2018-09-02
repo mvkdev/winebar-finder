@@ -1,0 +1,91 @@
+.card {
+	height: 30rem;
+	position: relative;
+	background-color: $color-grey-2;
+	box-shadow: 1rem 1rem 2rem .5rem rgba($color-black,0.5);
+	margin-top: 1rem;
+
+	&__picture {
+		transition: all .4s;
+		background: no-repeat left top url('../img/directory/entry1.jpg');
+		background-size: cover;
+		width: 100%;
+		height: 33.3%;
+
+	}
+
+	&__title{
+			font-size: 1.65rem;
+			font-family: "Roboto", sans-serif;
+			font-weight: 700;
+			margin-left: 1rem;
+			margin-top: 1rem;
+
+		}
+	&__subtitle {
+			margin-top: 1rem;
+			font-size: 1.2rem;
+			font-family: "Roboto Condensed";
+			font-weight: 300;
+			color: $color-grey-4;
+	}
+	
+	&__rating {
+		position: absolute;
+		font-size: 1.65rem;
+		right: 1rem;
+		top: 37%;
+		display: inline-block;
+
+		&-icon{
+			display: inline-block;
+			color: $color-primary-3;
+		}
+
+		&-value{
+			display: inline-block;
+			font-family: "Roboto Condensed", sans-serif;
+		}
+
+	}
+
+	&__address {
+		margin-left: 1rem;
+		margin-top: 2rem;
+		font-family: "Roboto Condensed", sans-serif;
+		font-size: 1.5rem;
+	}
+
+	&__address-line:not(:last-child){
+		margin-bottom: .5rem;
+	}
+
+	&__footer {
+		position: absolute;
+		left: 50%;
+		bottom: 5%;
+		transform: translateX(-50%);
+		font-size: 2rem;
+		font-family: "Roboto Condensed", sans-serif;
+
+	}
+
+	&__link{
+
+		&,
+		&:link,
+		&:visited {
+			text-decoration: none;
+			color: $color-black;
+		}
+
+		&-pointer{
+			color: $color-primary-2;
+			margin-left: 1rem;
+		}
+	}
+
+
+
+
+}
