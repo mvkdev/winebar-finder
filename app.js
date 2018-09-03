@@ -11,6 +11,10 @@ const express 			= require('express'),
 const indexRoutes 		= require('./routes/index');
 const directoryRoutes	= require('./routes/directory');
 
+// Import Models
+
+let camps = require('./models/winebars');
+
 
 // Initialize Mongoose and connect Mongo DB
 
@@ -24,6 +28,10 @@ mongoose.connect('mongodb://localhost:27017/winebar-finder', {useNewUrlParser: t
 // Initialize Express
 
 const app = express();
+
+//Seed DB
+
+const seedDB = require('./seed');
 
 // Configure Node Sass 
 

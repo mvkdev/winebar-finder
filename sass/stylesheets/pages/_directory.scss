@@ -1,6 +1,10 @@
 .directory-page {
-	height: 100vh;
-	background-image: linear-gradient(to right bottom,rgba($color-primary-1,1.0),rgba($color-primary-2,1.0));
+	height: 100%;
+	background-image: linear-gradient(to right bottom,rgba($color-primary-1-light,1.0),rgba($color-primary-2-light,1.0));
 	background-repeat: no-repeat;
 	background-size: cover;
+
+	&  .row:last-of-type{
+		margin-bottom:10rem;
+	}
 }
