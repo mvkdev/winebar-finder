@@ -9,7 +9,8 @@ const barSchema = new mongoose.Schema({
 		line2: String,
 		line3: String
 	},
-	rating: Number
+	rating: Number,
+	description: String
 })
 
 let bar = mongoose.model("bar",barSchema);

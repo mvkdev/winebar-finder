@@ -4,7 +4,7 @@ const express 			= require('express'),
 	  bodyParser		= require('body-parser'),
 	  methodOverride	= require('method-override'),
 	  mongoose			= require('mongoose'),
-	  sassMiddleware	= require('node-sass-middleware');
+	  path				= require('path');
 
 // Import Routes
 
@@ -13,7 +13,7 @@ const directoryRoutes	= require('./routes/directory');
 
 // Import Models
 
-let camps = require('./models/winebars');
+let bars = require('./models/winebars');
 
 
 // Initialize Mongoose and connect Mongo DB
@@ -33,13 +33,6 @@ const app = express();
 
 const seedDB = require('./seed');
 
-// Configure Node Sass 
-
-app.use(sassMiddleware({
-	src:  __dirname + '/sass',
-	dest: __dirname + '/public',
-	debug: true
-}))
 
 // Set View Engine
 
@@ -47,7 +40,7 @@ app.set('view engine','ejs');
 
 //Configure Express Middleware
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname,'public')));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 

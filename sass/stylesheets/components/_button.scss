@@ -1,0 +1,29 @@
+.button {
+
+	&-edit{
+	transition: all .2s;
+	position: relative;
+	margin-top: 2.5rem;
+	width: 12rem;
+	height: 3rem;
+	background-color: $color-primary-3;
+	color: $color-grey-1;
+	font-family: "Roboto Condensed";
+	border-radius: 10rem;
+	text-align: center;
+	}
+
+	&-text,
+	&-text:link,
+	&-text:visited {
+		text-decoration: none;
+		font-size: 1.6rem;
+		color: white;
+		@include absCenter;
+	}
+
+	&-edit:hover {
+		transform: scale(1.05) translateY(-.3rem);
+		box-shadow: .2rem .4rem 1rem rgba($color-black, .3)
+	}
+}

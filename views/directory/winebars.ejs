@@ -3,6 +3,22 @@
 <div class="bar-navigation">
 	<div class="bar-navigation__background">
 	</div>
+	<div class=navigation>
+		<input type="checkbox" class="navigation__checkbox" id="nav-toggle">
+		<label for="nav-toggle" class="navigation__button navigation__button-directoryPref">
+			<span class="navigation__icon">&nbsp;</span>
+		</label>
+		<div class="navigation__background">
+		</div>
+		<nav class="navigation__nav">
+			<ul class="navigation__list">
+				<li class="navigation__item"><a href="#" class=navigation__link>About</a></li>
+				<li class="navigation__item"><a href="/directory" class=navigation__link>Directory</a></li>
+				<li class="navigation__item"><a href="#" class=navigation__link>Register</a></li>
+				<li class="navigation__item"><a href="#" class=navigation__link>Log In</a></li>
+			</ul>
+		</nav>
+</div>
 </div>
 <% include ../partials/svg %>
 <main>
@@ -34,7 +50,7 @@
 					<%= bar.address.line3 %>
 				</div>
 			</div>
-			<div class="card__footer"><a href="#" class="card__link">
+			<div class="card__footer"><a href="directory/<%=bar._id%>" class="card__link">
 				Read more
 				<i class="fa fa-hand-point-right card__link-pointer"></i>
 			</a>
