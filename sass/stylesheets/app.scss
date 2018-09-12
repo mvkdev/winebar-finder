@@ -10,5 +10,12 @@
 
 @import "components/svg";
 @import "components/navigation";
+@import "components/bar-navigation";
+@import "components/card";
+@import "components/button";
+
+@import "layout/grid";
 
 @import "pages/index";
+@import "pages/directory";
+@import "pages/show";

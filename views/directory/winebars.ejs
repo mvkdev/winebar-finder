@@ -1,0 +1,68 @@
+<% include ../partials/header %>
+<body class="directory-page">
+<div class="bar-navigation">
+	<div class="bar-navigation__background">
+	</div>
+	<div class=navigation>
+		<input type="checkbox" class="navigation__checkbox" id="nav-toggle">
+		<label for="nav-toggle" class="navigation__button navigation__button-directoryPref">
+			<span class="navigation__icon">&nbsp;</span>
+		</label>
+		<div class="navigation__background">
+		</div>
+		<nav class="navigation__nav">
+			<ul class="navigation__list">
+				<li class="navigation__item"><a href="#" class=navigation__link>About</a></li>
+				<li class="navigation__item"><a href="/directory" class=navigation__link>Directory</a></li>
+				<li class="navigation__item"><a href="#" class=navigation__link>Register</a></li>
+				<li class="navigation__item"><a href="#" class=navigation__link>Log In</a></li>
+			</ul>
+		</nav>
+</div>
+</div>
+<% include ../partials/svg %>
+<main>
+<section class="directory-list">
+<div class="row">
+	<% winebars.forEach((bar,i) => { %>
+	<div class="col-1-of-4">
+		<div class="card">
+			<!-- <img class="card__picture" src="../img/directory/entry1.jpg"> -->
+			<img class="card__picture" src="<%= bar.image %>">
+				<div class="card__title">
+					<%= bar.name %>
+					<div class="card__subtitle">
+						<%= bar.tagline %>
+					</div>
+				</div>
+			<div class="card__rating">
+				<i class="fas fa-star card__rating-icon"></i>
+				<div class="card__rating-value"><%= bar.rating %></div>
+			</div>
+			<div class="card__address">
+				<div class="card__address-line">
+					<%= bar.address.line1 %>
+				</div>
+				<div class="card__address-line">
+					<%= bar.address.line2 %>
+				</div>
+				<div class="card__address-line">
+					<%= bar.address.line3 %>
+				</div>
+			</div>
+			<div class="card__footer"><a href="directory/<%=bar._id%>" class="card__link">
+				Read more
+				<i class="fa fa-hand-point-right card__link-pointer"></i>
+			</a>
+			</div>
+		</div>
+	</div>
+	<% if((i+1) % 4 === 0 && (i+1) != winebars.length) { %>
+   </div><div class="row"> 
+   	<% } %>
+	<% }) %> 
+</div>
+</section>
+</main>
+
+<% include ../partials/footer %>
