@@ -1,0 +1,22 @@
+.directory-page {
+	height: 100%;
+	// background-image: linear-gradient(to right bottom,rgba($color-primary-1-light,1.0),rgba($color-primary-2-light,1.0));
+	// background-repeat: no-repeat;
+	// background-size: cover;
+	background-color: $color-grey-3;
+
+	& .row:last-of-type{
+		margin-bottom:10rem;
+	}
+}
+
+.navigation__button-directoryPref {
+	position: fixed;
+	top: 2rem;
+	right: 6rem;
+	height: 6rem;
+	width: 6rem;
+	background-color: $color-primary-1;
+	border-radius: 50%;
+	box-shadow: .5rem .5rem 1rem rgba($color-black,.2);
+}

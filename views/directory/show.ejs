@@ -1,0 +1,51 @@
+<% include ../partials/header %>
+<body class="directory-page">
+<div class="bar-navigation">
+	<div class="bar-navigation__background">
+	</div>
+	<div class=navigation>
+		<input type="checkbox" class="navigation__checkbox" id="nav-toggle">
+		<label for="nav-toggle" class="navigation__button navigation__button-directoryPref">
+			<span class="navigation__icon">&nbsp;</span>
+		</label>
+		<div class="navigation__background">
+		</div>
+		<nav class="navigation__nav">
+			<ul class="navigation__list">
+				<li class="navigation__item"><a href="#" class=navigation__link>About</a></li>
+				<li class="navigation__item"><a href="/directory" class=navigation__link>Directory</a></li>
+				<li class="navigation__item"><a href="#" class=navigation__link>Register</a></li>
+				<li class="navigation__item"><a href="#" class=navigation__link>Log In</a></li>
+			</ul>
+		</nav>
+</div>
+</div>
+<main>
+<section class="bar">
+<div class="row bar__wrapper">
+	<div class="col-1-of-5 bar__column-left">
+	<img class="bar__map" src="../img/directory/map.jpg" alt="image of map">
+		<div class="bar__main-address">
+				<div class="bar__main-address-header">Address:</div>
+				<div class="bar__main-address-line"><%= bar.address.line1 %></div>
+				<div class="bar__main-address-line"><%= bar.address.line2 %></div>
+				<div class="bar__main-address-line"><%= bar.address.line3 %></div>
+		</div>
+ </div>
+	<div class="col-4-of-5 bar__column-right">
+		<img class="bar__image" src="<%=bar.image%>" alt="Image of a Bar">
+		<div class="bar__header">
+			<div class="bar__header-title"><%=bar.name%></div>
+			<div class="bar__header-subtitle"><%=bar.tagline %></div>
+			<div class="bar__header-rating"><i class="fa fa-star bar__header-rating-icon"></i><%=bar.rating %></div>
+		</div>
+		<div class="bar__main">
+			<div class="bar__main-description"><%=bar.description %></div>
+			
+			<div class="button-edit"><a href="#" class="button-text">Edit Entry</a></div>
+		</div>
+	</div>
+</div>
+</section>
+</main>
+<% include ../partials/footer %>

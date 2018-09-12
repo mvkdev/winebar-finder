@@ -4,11 +4,16 @@ const express 			= require('express'),
 	  bodyParser		= require('body-parser'),
 	  methodOverride	= require('method-override'),
 	  mongoose			= require('mongoose'),
-	  sassMiddleware	= require('node-sass-middleware');
+	  path				= require('path');
 
 // Import Routes
 
 const indexRoutes 		= require('./routes/index');
+const directoryRoutes	= require('./routes/directory');
+
+// Import Models
+
+let bars = require('./models/winebars');
 
 
 // Initialize Mongoose and connect Mongo DB
@@ -24,13 +29,10 @@ mongoose.connect('mongodb://localhost:27017/winebar-finder', {useNewUrlParser: t
 
 const app = express();
 
-// Configure Node Sass 
+//Seed DB
 
-app.use(sassMiddleware({
-	src:  __dirname + '/sass',
-	dest: __dirname + '/public',
-	debug: true
-}))
+const seedDB = require('./seed');
+
 
 // Set View Engine
 
@@ -38,13 +40,14 @@ app.set('view engine','ejs');
 
 //Configure Express Middleware
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname,'public')));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 
 //Load Index Route
 
 app.use(indexRoutes);
+app.use(directoryRoutes);
 
 //Start Server
 

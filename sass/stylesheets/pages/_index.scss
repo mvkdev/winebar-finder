@@ -74,3 +74,16 @@
 		}
 	}
 }
+
+.navigation__button-indexPref{
+	position: fixed;
+	top: 3rem;
+	right: 6rem;
+	height: 6rem;
+	width: 6rem;
+	background-color: transparent;
+	border: 1px solid $color-grey-3;
+	border-radius: 50%;
+}
+
+
