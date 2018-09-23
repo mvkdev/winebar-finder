@@ -3,22 +3,7 @@
 <div class="bar-navigation">
 	<div class="bar-navigation__background">
 	</div>
-	<div class=navigation>
-		<input type="checkbox" class="navigation__checkbox" id="nav-toggle">
-		<label for="nav-toggle" class="navigation__button navigation__button-directoryPref">
-			<span class="navigation__icon">&nbsp;</span>
-		</label>
-		<div class="navigation__background">
-		</div>
-		<nav class="navigation__nav">
-			<ul class="navigation__list">
-				<li class="navigation__item"><a href="#" class=navigation__link>About</a></li>
-				<li class="navigation__item"><a href="/directory" class=navigation__link>Directory</a></li>
-				<li class="navigation__item"><a href="#" class=navigation__link>Register</a></li>
-				<li class="navigation__item"><a href="#" class=navigation__link>Log In</a></li>
-			</ul>
-		</nav>
-</div>
+<% include ../partials/nav %>
 </div>
 <main>
 <section class="bar">
@@ -41,9 +26,27 @@
 		</div>
 		<div class="bar__main">
 			<div class="bar__main-description"><%=bar.description %></div>
-			
 			<div class="button-edit"><a href="#" class="button-text">Edit Entry</a></div>
 		</div>
+		<div class="comment">
+			<div class="comment__title">Comments:</div>
+			<% if(currentUser) { %>
+			<div class="comment__add">
+				<form method="POST" action="/directory/<%=bar._id%>/comment/new" class="comment__form">
+					<input type="text" name="text" placeholder="Your comment..." required class="comment__form-text">
+					<button class="comment__form-submit">Add comment</button>
+				</form>
+			</div>
+			<% } else { %>
+			<div class="comment__login"><a class="comment__login-link" href="/login">Log In to comment &rarr;</a></div>
+			<% } %>
+		<% bar.comments.forEach((el,index) => { %>
+		<div class="comment__box">
+			<div class="comment__author"><%= el.author.username %></div>
+			<div class="comment__text"><%= el.text %></div>
+			<img class="comment__picture" src="<%=el.author.picture%>">
+		</div>
+	    <% }) %>
 	</div>
 </div>
 </section>
