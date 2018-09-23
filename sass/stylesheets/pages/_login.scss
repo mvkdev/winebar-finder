@@ -1,0 +1,67 @@
+.login-page{
+	background-color: $color-primary-2;
+}
+
+.login {
+
+	&__box{
+		@include absCenter;
+		width: 30rem;
+		height: 30rem;
+		background-color: $color-grey-2;
+		border: 3px solid $color-primary-1;
+		box-shadow: 1rem 2rem 2rem rgba($color-black,.4);
+	}
+
+	&__title {
+		margin-left: 1rem;
+		margin-top: 3rem;
+		font-size: 2.2rem;
+		font-family: "Roboto Condensed";
+		font-weight: 700;
+		color: $color-primary-1;
+
+	}
+
+	&__form {
+		margin-left: 1rem;
+		margin-top: 2rem;
+		&-user,
+		&-password {
+			margin-top: 1.2rem;
+			border: none;
+			height: 4rem;
+			width: 25rem;
+			background-color: $color-grey-3;
+			font-size: 1.5rem;
+			font-family: "Roboto Condensed";
+			
+			&:focus {
+				outline: none;
+				border-bottom: 3px solid $color-primary-1;
+			}
+
+		}
+		&-password {
+			margin-bottom: 1.5rem;
+		}
+	
+	&-submit {
+			border: 0;
+			height: 4rem;
+			width: 10rem;
+			font-size: 1.5rem;
+			font-family: "Roboto Condensed";
+			background-color: $color-primary-1;
+			color: $color-grey-1;
+			transition: all .2s;
+
+			&:hover{
+			 	transform: scale(1.05) translateY(-.8rem);
+			 	box-shadow: .5rem 1rem 2rem rgba($color-black, .3);
+			}
+		}
+	}
+
+
+}

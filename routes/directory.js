@@ -14,7 +14,7 @@ router.get('/directory', (req,res) => {
 });
 
 router.get('/directory/:id', (req,res) => {
-		bars.findById(req.params.id, (err,foundBar) => {
+		bars.findById(req.params.id).populate("comments").exec((err,foundBar) => {
 			if(err)
 			{
 				console.log("Error happens here!!!!",err);	
@@ -22,10 +22,10 @@ router.get('/directory/:id', (req,res) => {
 			}
 			else
 			{
-				console.log(__dirname);
+				console.log(foundBar.comments.author);
 				res.render('directory/show',{bar: foundBar});
 			}
-		})
+	})
 });
 
 

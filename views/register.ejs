@@ -1,0 +1,11 @@
+<% include partials/header %>
+<body class="register-page">
+	<div class="register__box">
+		<div class="register__title">Sign up for awesome things!</div>
+		<form method="POST" action="/register" class="register__form">
+			<input type="text" name="username" placeholder="Choose a username" class="register__form-user">
+			<input type="password" name="password" placeholder="And a password..." class="register__form-password">
+			<button class="register__form-submit">Register!</button>
+		</form>
+	</div>
+<% include partials/footer %>
