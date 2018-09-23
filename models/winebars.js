@@ -10,7 +10,11 @@ const barSchema = new mongoose.Schema({
 		line3: String
 	},
 	rating: Number,
-	description: String
+	description: String,
+	comments: [{
+		type: mongoose.Schema.Types.ObjectId,
+		ref: "comment"
+	}]
 })
 
 let bar = mongoose.model("bar",barSchema);

@@ -15,13 +15,13 @@
 		&-right {
 			background-color: $color-grey-1;
 			border-radius: .4rem;
-			height: 70rem;
+			min-height: 70rem;
 		}
 	}
 
 	&__image {
 		width: 100%;
-		height: 50%;
+		height: 35rem;
 		object-fit: cover;
 		overflow: hidden;
 	}

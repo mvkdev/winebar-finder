@@ -1,5 +1,7 @@
 const mongoose 			= require('mongoose'),
-	  bar				= require('./models/winebars');
+	  bar				= require('./models/winebars'),
+	  comment			= require('./models/comment'),
+	  user				= require('./models/user');
 
 
 const data = [
@@ -82,8 +84,21 @@ const seedDataBase = () => {
 						console.log("Error creating Bar... ",err);
 					else
 					{
-						createdBar.save();
 						console.log("Bar created!");
+						comment.create({
+							author: "Johnny",
+							text: "Great Bar, will come again"
+						}, (err, comment) => {
+							if(err)
+								console.log('Error creating comment...', err);
+							else{
+								createdBar.comments.push(comment);
+								createdBar.save();
+								console.log('Comment added');
+							}
+						}
+
+						)
 					}
 				})
 			})

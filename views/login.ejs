@@ -1,0 +1,11 @@
+<% include partials/header %>
+<body class="login-page">
+	<div class="login__box">
+		<div class="login__title">Log In with your credentials</div>
+		<form method="POST" action="/login" class="login__form">
+			<input type="text" name="username" placeholder="Username" class="login__form-user">
+			<input type="password" name="password" placeholder="Password" class="login__form-password">
+			<button class="login__form-submit">Log In</button>
+		</form>
+	</div>
+<% include partials/footer %>

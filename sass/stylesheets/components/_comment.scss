@@ -1,0 +1,103 @@
+.comment {
+	&__box {
+	position: relative;
+	margin-left: 6rem;
+	margin-top: 1.5rem;
+	width: 20rem;
+	height: 4.5rem;
+	background-color: $color-primary-2-light;
+	border-radius: .7rem;
+	color: $color-grey-1;
+
+	&:last-child{
+		margin-bottom: 3rem;
+	}
+
+	}
+
+	&__picture {
+		position: absolute;
+		top: 0;
+		left: -5rem;
+		width: 4.5rem;
+		border-radius: 100%;
+		//clip-path: circle(2.1rem at center);
+	}
+
+	&__author {
+		padding-top: .3rem;
+		margin-left: 1rem;
+		font-size: 1.5rem;
+		font-family: "Roboto Condensed";
+		font-weight: 700;
+	}
+
+	&__text {
+		margin-top: .5rem;
+		padding-bottom: .2rem;
+		margin-left: 1rem;
+		font-size: 1.2rem;
+		font-family: "Roboto Condensed";
+	}
+
+	&__title {
+		margin-left: 1rem;
+		margin-top: 2rem;
+		font-size: 2rem;
+		font-family: "Roboto Condensed";
+		font-weight: 700;
+	}
+
+	&__form {
+		margin-left: 1rem;
+		margin-top: 1.5rem;
+		margin-bottom: 3rem;
+		
+		&-text {
+			border: none;
+			height: 4rem;
+			width: 25rem;
+			background-color: $color-grey-3;
+			font-size: 1.5rem;
+			font-family: "Roboto Condensed";
+			
+			&:focus {
+				outline: none;
+				border-bottom: 3px solid $color-primary-1;
+			}
+		}
+		&-submit {
+			border: 0;
+			margin-left: 1.5rem;
+			height: 4rem;
+			width: 10rem;
+			font-size: 1.5rem;
+			font-family: "Roboto Condensed";
+			background-color: $color-primary-1;
+			color: $color-grey-1;
+			transition: all .2s;
+
+			&:hover{
+			 	transform: scale(1.05) translateY(-.8rem);
+			 	box-shadow: .5rem 1rem 2rem rgba($color-black, .3);
+			}
+		}
+	}
+
+	&__login {
+		
+		margin-left: 1rem;
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+
+		&-link,
+		&-link:link,
+		&-link:visited {
+		font-family: "Roboto Condensed";
+		font-weight: 700;
+		font-size: 2rem;
+		text-decoration: none;
+		color: $color-primary-3;
+		}
+	}
+}
